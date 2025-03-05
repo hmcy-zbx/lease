@@ -19,3 +19,10 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+minio:
+  endpoint: http://localhost:9000
+  access-key: zbx
+  secret-key: zbx123456
+  bucket-name: lease
+springdoc:
+  default-flat-param-object: true
