@@ -1,7 +1,10 @@
 package com.zbx.lease.web.admin.mapper;
 
+import com.zbx.lease.model.entity.LeaseTerm;
 import com.zbx.lease.model.entity.RoomLeaseTerm;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
 * @author liubo
@@ -11,6 +14,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface RoomLeaseTermMapper extends BaseMapper<RoomLeaseTerm> {
 
+    List<LeaseTerm> selectByRoomId(Long id);
 }
 
 
