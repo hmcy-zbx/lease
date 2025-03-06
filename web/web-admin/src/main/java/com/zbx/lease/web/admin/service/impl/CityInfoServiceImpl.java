@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zbx.lease.model.entity.CityInfo;
 import com.zbx.lease.web.admin.service.CityInfoService;
 import com.zbx.lease.web.admin.mapper.CityInfoMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author liubo

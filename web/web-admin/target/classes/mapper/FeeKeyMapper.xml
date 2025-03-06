@@ -3,5 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zbx.lease.web.admin.mapper.FeeKeyMapper">
-
+    <resultMap id="feeKeyVoMap" type="com.zbx.lease.web.admin.vo.fee.FeeKeyVo">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <collection property="feeValueList" ofType="com.zbx.lease.model.entity.FeeValue">
+            <id property="id" column="fee_value_id"/>
+            <result property="name" column="fee_value_name"/>
+            <result property="unit" column="unit"/>
+            <result property="feeKeyId" column="fee_key_id"/>
+        </collection>
+    </resultMap>
+    <select id="feeInfoList" resultMap="feeKeyVoMap">
+        SELECT k.id, k.name, v.id AS fee_value_id, v.name AS fee_value_name, v.unit, v.fee_key_id
+        FROM fee_key k
+                 LEFT JOIN fee_value v ON k.id = v.fee_key_id
+        WHERE k.is_deleted = 0 and v.is_deleted = 0;
+    </select>
 </mapper>

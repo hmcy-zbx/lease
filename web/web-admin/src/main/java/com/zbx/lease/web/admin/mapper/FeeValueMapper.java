@@ -4,6 +4,8 @@ import com.zbx.lease.model.entity.FeeValue;
 import com.zbx.lease.web.admin.vo.fee.FeeValueVo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
 * @author liubo
 * @description 针对表【fee_value(杂项费用值表)】的数据库操作Mapper
@@ -12,6 +14,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface FeeValueMapper extends BaseMapper<FeeValue> {
 
+    List<FeeValueVo> selectListByApartmentId(Long id);
 }
 
 
