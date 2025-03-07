@@ -1,5 +1,6 @@
 package com.zbx.lease.web.admin.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.zbx.lease.model.entity.SystemUser;
 import com.zbx.lease.web.admin.vo.system.user.SystemUserItemVo;
 import com.zbx.lease.web.admin.vo.system.user.SystemUserQueryVo;
@@ -13,6 +14,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface SystemUserMapper extends BaseMapper<SystemUser> {
 
+    IPage<SystemUserItemVo> pageSystemUserByQuery(IPage<SystemUser> page, SystemUserQueryVo queryVo);
+
+    SystemUser selectOneByUserName(String username);
 }
 
 
